@@ -28,6 +28,14 @@ function exibirMensagemInicial() {
 function verificarChute() {
     let chute = document.querySelector('input').value;
 
+    if (chute > numeroLimite) {
+        exibirTextoNaTela('p', 'Por favor, ensira um número válido');
+        return;
+    } else if (chute < 1) {
+        exibirTextoNaTela('p', 'Por favor, ensira um número válido');
+        return;
+    };
+
     if (chute == numeroSecreto) {
         exibirTextoNaTela('h1', 'Parabéns!');
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
@@ -43,12 +51,6 @@ function verificarChute() {
         };
         tentativas ++;
         limparCampo();
-    };
-
-    if (chute > numeroLimite) {
-        exibirTextoNaTela('p', 'Por favor, ensira um número válido');
-    } else if (chute < 1) {
-        exibirTextoNaTela('p', 'Por favor, ensira um número válido');
     };
 };
 
