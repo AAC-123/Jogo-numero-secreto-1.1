@@ -1,4 +1,4 @@
-# Jogo do número secreto 2.0
+# Jogo do número secreto 1.1
 
 Este é um jogo onde temos que adivinhar o número secreto que é gerado aleatoriamente pelo jogo.
 
