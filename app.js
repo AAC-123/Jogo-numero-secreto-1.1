@@ -1,4 +1,5 @@
 let listaDeNumerosSorteados = [];
+let listaDeChutes = [];
 let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
@@ -43,6 +44,7 @@ function verificarChute() {
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
         document.getElementById('chutar').setAttribute('disabled', true);
+        document.getElementById('chutar').textContent = 'Acertou!';
     } else {
         if (chute < numeroSecreto) {
             exibirTextoNaTela('p', `O número secreto é maior do que ${chute}`);
