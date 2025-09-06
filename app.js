@@ -37,6 +37,15 @@ function verificarChute() {
         return;
     };
 
+    if (listaDeChutes.includes(chute)) {
+        exibirTextoNaTela('p', `Você já chutou o número ${chute}`);
+        return;
+    } else {
+        listaDeChutes.push(chute);
+    };
+
+    console.log(listaDeChutes);
+
     if (chute == numeroSecreto) {
         exibirTextoNaTela('h1', 'Parabéns!');
         let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
@@ -86,6 +95,8 @@ function reiniciarJogo() {
     limparCampo();
     tentativas = 1;
     exibirMensagemInicial();
+    listaDeChutes = [];
     document.getElementById('reiniciar').setAttribute('disabled', true)
     document.getElementById('chutar').removeAttribute('disabled');
+    document.getElementById('chutar').textContent = 'Chutar';
 };
